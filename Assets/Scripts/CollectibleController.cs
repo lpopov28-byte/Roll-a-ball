@@ -15,10 +15,16 @@ public class CollectibleController : MonoBehaviour
 {
     [SerializeField] private AudioClip collectSound;
     [SerializeField] private GameObject collectParticlePrefab;
+    private GameManager gameManager;
 
+    void Start()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();
+    }
 
     // Call with this object collides with a trigger
     private void OnTriggerEnter(Collider other)
+    // Finds the Game Manager in the Scene\
     {
         // Only executes if the collision was with the Player
         if (other.CompareTag("Player"))
