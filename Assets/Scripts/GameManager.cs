@@ -56,22 +56,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
-      IEnumerator EndGame()
-    {
-        
-        RemainingTextUI.text = "You Win";
-	  audioSource.clip = winClip;
-        audioSource.Play();
-
-        // Waits for the exact duration of the audio clip
-        yield return new WaitForSeconds(audioSource.clip.length);    
-        
-        // Reloads the currently active scene
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name);
-
-    }
-
+     
 }
 
 
